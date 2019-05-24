@@ -35,7 +35,6 @@
             this.speedSelect = new System.Windows.Forms.TrackBar();
             this.pauseMsg = new System.Windows.Forms.Label();
             this.circle = new System.Windows.Forms.PictureBox();
-            this.lblPoints = new System.Windows.Forms.Label();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.startBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,22 +46,24 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(330, 200);
+            this.pictureBox1.Location = new System.Drawing.Point(42, 156);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(26, 28);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // timer1
             // 
-            this.timer1.Interval = 50;
+            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // speedSelect
             // 
-            this.speedSelect.Location = new System.Drawing.Point(-100, -100);
+            this.speedSelect.Location = new System.Drawing.Point(-75, -81);
+            this.speedSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.speedSelect.Name = "speedSelect";
-            this.speedSelect.Size = new System.Drawing.Size(104, 56);
+            this.speedSelect.Size = new System.Drawing.Size(78, 45);
             this.speedSelect.TabIndex = 1;
             this.speedSelect.Value = 10;
             this.speedSelect.Scroll += new System.EventHandler(this.SpeedSelect_Scroll);
@@ -73,10 +74,11 @@
             this.pauseMsg.AutoSize = true;
             this.pauseMsg.BackColor = System.Drawing.Color.Transparent;
             this.pauseMsg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pauseMsg.Font = new System.Drawing.Font("Minion Pro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pauseMsg.Location = new System.Drawing.Point(178, 30);
+            this.pauseMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pauseMsg.Location = new System.Drawing.Point(134, 24);
+            this.pauseMsg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pauseMsg.Name = "pauseMsg";
-            this.pauseMsg.Size = new System.Drawing.Size(498, 81);
+            this.pauseMsg.Size = new System.Drawing.Size(434, 55);
             this.pauseMsg.TabIndex = 3;
             this.pauseMsg.Text = "GAME IS PAUSED";
             this.pauseMsg.Visible = false;
@@ -85,23 +87,13 @@
             // 
             this.circle.Image = ((System.Drawing.Image)(resources.GetObject("circle.Image")));
             this.circle.InitialImage = ((System.Drawing.Image)(resources.GetObject("circle.InitialImage")));
-            this.circle.Location = new System.Drawing.Point(426, 262);
+            this.circle.Location = new System.Drawing.Point(42, 246);
+            this.circle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.circle.Name = "circle";
-            this.circle.Size = new System.Drawing.Size(43, 45);
+            this.circle.Size = new System.Drawing.Size(32, 37);
             this.circle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.circle.TabIndex = 4;
             this.circle.TabStop = false;
-            // 
-            // lblPoints
-            // 
-            this.lblPoints.AutoSize = true;
-            this.lblPoints.Font = new System.Drawing.Font("Minion Pro Cond", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoints.Location = new System.Drawing.Point(12, 9);
-            this.lblPoints.Name = "lblPoints";
-            this.lblPoints.Size = new System.Drawing.Size(35, 45);
-            this.lblPoints.TabIndex = 6;
-            this.lblPoints.Text = "0";
-            this.lblPoints.Click += new System.EventHandler(this.LblPoints_Click);
             // 
             // clock
             // 
@@ -110,10 +102,11 @@
             // 
             // startBtn
             // 
-            this.startBtn.Font = new System.Drawing.Font("Minion Pro", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startBtn.Location = new System.Drawing.Point(169, 108);
+            this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startBtn.Location = new System.Drawing.Point(127, 88);
+            this.startBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(460, 63);
+            this.startBtn.Size = new System.Drawing.Size(345, 51);
             this.startBtn.TabIndex = 7;
             this.startBtn.Text = "START";
             this.startBtn.UseVisualStyleBackColor = true;
@@ -121,17 +114,17 @@
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(586, 368);
             this.Controls.Add(this.startBtn);
-            this.Controls.Add(this.lblPoints);
             this.Controls.Add(this.circle);
             this.Controls.Add(this.pauseMsg);
             this.Controls.Add(this.speedSelect);
             this.Controls.Add(this.pictureBox1);
             this.KeyPreview = true;
-            this.MaximumSize = new System.Drawing.Size(100000, 1000000);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(75004, 812507);
             this.Name = "mainForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -153,7 +146,6 @@
         private System.Windows.Forms.TrackBar speedSelect;
         private System.Windows.Forms.Label pauseMsg;
         private System.Windows.Forms.PictureBox circle;
-        private System.Windows.Forms.Label lblPoints;
         private System.Windows.Forms.Timer clock;
         private System.Windows.Forms.Button startBtn;
     }

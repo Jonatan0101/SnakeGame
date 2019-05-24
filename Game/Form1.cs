@@ -21,6 +21,9 @@ namespace Game
         int clockUp = 0;
         int timeLeft = 60;
 
+        int formWidth;
+        int formHeight;
+
         int currentX;
         int currentY;
 
@@ -78,8 +81,7 @@ namespace Game
 
             pauseMsg.Visible = false;
 
-            currentX = pictureBox1.Location.X;
-            currentY = pictureBox1.Location.Y;
+            GetPositions();
 
             // Tar in direction variablen och flyttar den åt hållet det är
             switch (direction)
@@ -114,29 +116,46 @@ namespace Game
 
         void Control()
         {
-            currentX = pictureBox1.Location.X;
-            currentY = pictureBox1.Location.Y;
+            GetPositions();
 
-            circlePosX = circle.Location.X;
-            circlePosY = circle.Location.Y;
+            int diffNormX = Math.Abs(currentX - circlePosX);
+            int diffEdgX = Math.Abs(Width - currentX + circlePosX);
+
+            int diffNormY = Math.Abs(currentY - circlePosX);
+            int diffEdgY = Math.Abs(Height - currentY + circlePosX);
+
+            data.txtDisplay.AppendText($"\ndiffnormX{diffNormX}-----diffedgex{diffEdgX}");
 
             if (currentX < circlePosX)
             {
-                direction = "right";
+                if (diffNormX < diffEdgX)
+                    direction = "right";
+                else
+                    direction = "left";
             }
             if (currentX > circlePosX)
             {
-                direction = "left";
+                if (diffNormX < diffEdgX)
+                    direction = "left";
+                else
+                    direction = "right";
             }
-            if(circlePosX -10 < currentX && circlePosX +10 > currentX)
+            if(circlePosX -speed < currentX && circlePosX +speed > currentX)
             {
                 if(currentY < circlePosY)
                 {
-                    direction = "down";
+                    if (diffNormY < diffEdgY)
+                        direction = "down";
+                    else
+                        direction = "up";
+                    
                 }
                 if(currentY > circlePosY)
                 {
-                    direction = "up";
+                    if (diffNormY < diffEdgY)
+                        direction = "up";
+                    else
+                        direction = "down";
                 }
             }
         }
@@ -144,14 +163,23 @@ namespace Game
         // Kalkylerar avståndet i pixlar mellan bild och cirkel
         double DistCalc()
         {
+            
+            GetPositions();
+            // Returnerar avståndet som räknas ut med hjälp av avståndsformeln
+            return Math.Sqrt(Math.Pow(circlePosX - currentX, 2) + Math.Pow(circlePosY - currentY, 2));
+                    
+        }
+
+        void GetPositions()
+        {
+            formHeight = Height;
+            formWidth = Width;
+
             currentX = pictureBox1.Location.X;
             currentY = pictureBox1.Location.Y;
 
             circlePosX = circle.Location.X;
             circlePosY = circle.Location.Y;
-
-            // Returnerar avståndet som räknas ut med hjälp av avståndsformeln
-            return Math.Sqrt(Math.Pow(circlePosX - currentX, 2) + Math.Pow(circlePosY - currentY, 2));
         }
 
         void ChangePictureLocation(PictureBox p, int x, int y)
@@ -167,7 +195,7 @@ namespace Game
             Random r = new Random();
             circle.Location = new Point(r.Next(1, Size.Width -20), r.Next(1, Size.Height-100));
 
-            data.txtDisplay.Text = $"{data.txtDisplay.Text}\n{DistCalc()} ----- ({currentX}, {currentY}) ({circlePosX},{circlePosY})";
+            //data.txtDisplay.AppendText($"\n{DistCalc()} ----- ({currentX}, {currentY}) ({circlePosX},{circlePosY})");
         }
 
         private void SpeedSelect_Scroll(object sender, EventArgs e)

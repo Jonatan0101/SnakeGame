@@ -39,30 +39,33 @@
             // infoPoints
             // 
             this.infoPoints.AutoSize = true;
-            this.infoPoints.Font = new System.Drawing.Font("Minion Pro", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoPoints.Location = new System.Drawing.Point(12, 9);
+            this.infoPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoPoints.Location = new System.Drawing.Point(9, 7);
+            this.infoPoints.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.infoPoints.Name = "infoPoints";
-            this.infoPoints.Size = new System.Drawing.Size(134, 45);
+            this.infoPoints.Size = new System.Drawing.Size(120, 31);
             this.infoPoints.TabIndex = 0;
             this.infoPoints.Text = "Points: 0";
             // 
             // infoTimeLeft
             // 
             this.infoTimeLeft.AutoSize = true;
-            this.infoTimeLeft.Font = new System.Drawing.Font("Minion Pro", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoTimeLeft.Location = new System.Drawing.Point(12, 54);
+            this.infoTimeLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoTimeLeft.Location = new System.Drawing.Point(9, 44);
+            this.infoTimeLeft.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.infoTimeLeft.Name = "infoTimeLeft";
-            this.infoTimeLeft.Size = new System.Drawing.Size(194, 45);
+            this.infoTimeLeft.Size = new System.Drawing.Size(172, 31);
             this.infoTimeLeft.TabIndex = 1;
             this.infoTimeLeft.Text = "Time Left: 60";
             this.infoTimeLeft.Visible = false;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Minion Pro", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(20, 369);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(15, 300);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(337, 72);
+            this.button1.Size = new System.Drawing.Size(253, 58);
             this.button1.TabIndex = 2;
             this.button1.Text = "Pause";
             this.button1.UseVisualStyleBackColor = true;
@@ -70,10 +73,11 @@
             // 
             // btnReset
             // 
-            this.btnReset.Font = new System.Drawing.Font("Minion Pro", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(20, 291);
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(15, 236);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(337, 72);
+            this.btnReset.Size = new System.Drawing.Size(253, 58);
             this.btnReset.TabIndex = 3;
             this.btnReset.TabStop = false;
             this.btnReset.Text = "Reset";
@@ -83,28 +87,30 @@
             // infoDirCh
             // 
             this.infoDirCh.AutoSize = true;
-            this.infoDirCh.Font = new System.Drawing.Font("Minion Pro", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoDirCh.Location = new System.Drawing.Point(12, 99);
+            this.infoDirCh.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoDirCh.Location = new System.Drawing.Point(9, 80);
+            this.infoDirCh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.infoDirCh.Name = "infoDirCh";
-            this.infoDirCh.Size = new System.Drawing.Size(298, 45);
+            this.infoDirCh.Size = new System.Drawing.Size(268, 31);
             this.infoDirCh.TabIndex = 4;
             this.infoDirCh.Text = "Direction Changes: 0";
             // 
             // infoPpS
             // 
             this.infoPpS.AutoSize = true;
-            this.infoPpS.Font = new System.Drawing.Font("Minion Pro", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoPpS.Location = new System.Drawing.Point(12, 144);
+            this.infoPpS.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoPpS.Location = new System.Drawing.Point(9, 117);
+            this.infoPpS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.infoPpS.Name = "infoPpS";
-            this.infoPpS.Size = new System.Drawing.Size(255, 45);
+            this.infoPpS.Size = new System.Drawing.Size(234, 31);
             this.infoPpS.TabIndex = 5;
             this.infoPpS.Text = "Points / Second: 0";
             // 
             // Information
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 453);
+            this.ClientSize = new System.Drawing.Size(277, 368);
             this.Controls.Add(this.infoPpS);
             this.Controls.Add(this.infoDirCh);
             this.Controls.Add(this.btnReset);
@@ -112,7 +118,10 @@
             this.Controls.Add(this.infoTimeLeft);
             this.Controls.Add(this.infoPoints);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Information";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Time Left: 60";
             this.Load += new System.EventHandler(this.Information_Load);
