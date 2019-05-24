@@ -21,9 +21,6 @@ namespace Game
         int clockUp = 0;
         int timeLeft = 60;
 
-        int formWidth;
-        int formHeight;
-
         int currentX;
         int currentY;
 
@@ -126,7 +123,7 @@ namespace Game
             int diffNormY = Math.Abs(currentY - circlePosX);
             int diffEdgY = Math.Abs(Height - currentY + circlePosX);
 
-            data.txtDisplay.AppendText($"\ndiffnormX{diffNormX}-----diffedgex{diffEdgX}");
+            data.txtDisplay.AppendText($"\ndiffNormX{diffNormX}-----diffEdgeX{diffEdgX} /// diffNormY{diffNormY}-----diffEdgeY{diffEdgY}");
 
             if (currentX < circlePosX)
             {
@@ -145,13 +142,8 @@ namespace Game
             if(circlePosX -speed < currentX && circlePosX +speed > currentX)
             {
                 if(currentY < circlePosY)
-                {
-                    if (diffNormY < diffEdgY)
-                        direction = "down";
-                    else
-                        direction = "up";
-                    
-                }
+                    direction = "down";
+
                 if(currentY > circlePosY)
                 {
                     if (diffNormY < diffEdgY)
@@ -189,7 +181,6 @@ namespace Game
         // Kalkylerar avståndet i pixlar mellan bild och cirkel
         double DistCalc()
         {
-            
             GetPositions();
             // Returnerar avståndet som räknas ut med hjälp av avståndsformeln
             return Math.Sqrt(Math.Pow(circlePosX - currentX, 2) + Math.Pow(circlePosY - currentY, 2));
@@ -198,9 +189,6 @@ namespace Game
 
         void GetPositions()
         {
-            formHeight = Height;
-            formWidth = Width;
-
             currentX = pictureBox1.Location.X;
             currentY = pictureBox1.Location.Y;
 
@@ -253,8 +241,6 @@ namespace Game
             pauseMsg.Visible = false;
             ChangeCirclePosition();
         }
-
-        private void LblPoints_Click(object sender, EventArgs e){ }
 
         private void StartBtn_Click(object sender, EventArgs e)
         {

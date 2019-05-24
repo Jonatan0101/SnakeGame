@@ -35,10 +35,10 @@
             // txtDisplay
             // 
             this.txtDisplay.Location = new System.Drawing.Point(9, 10);
-            this.txtDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.txtDisplay.Name = "txtDisplay";
             this.txtDisplay.ReadOnly = true;
-            this.txtDisplay.Size = new System.Drawing.Size(326, 364);
+            this.txtDisplay.Size = new System.Drawing.Size(368, 364);
             this.txtDisplay.TabIndex = 0;
             this.txtDisplay.Text = "";
             this.txtDisplay.TextChanged += new System.EventHandler(this.TxtDisplay_TextChanged);
@@ -46,7 +46,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(10, 379);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 24);
             this.button1.TabIndex = 1;
@@ -58,12 +58,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 413);
+            this.ClientSize = new System.Drawing.Size(388, 413);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DisplayData";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

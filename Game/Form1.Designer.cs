@@ -46,8 +46,8 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 218);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 329);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 28);
             this.pictureBox1.TabIndex = 0;
@@ -61,7 +61,7 @@
             // speedSelect
             // 
             this.speedSelect.Location = new System.Drawing.Point(-75, -81);
-            this.speedSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.speedSelect.Margin = new System.Windows.Forms.Padding(2);
             this.speedSelect.Name = "speedSelect";
             this.speedSelect.Size = new System.Drawing.Size(78, 45);
             this.speedSelect.TabIndex = 1;
@@ -87,8 +87,8 @@
             // 
             this.circle.Image = ((System.Drawing.Image)(resources.GetObject("circle.Image")));
             this.circle.InitialImage = ((System.Drawing.Image)(resources.GetObject("circle.InitialImage")));
-            this.circle.Location = new System.Drawing.Point(20, 298);
-            this.circle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.circle.Location = new System.Drawing.Point(11, 265);
+            this.circle.Margin = new System.Windows.Forms.Padding(2);
             this.circle.Name = "circle";
             this.circle.Size = new System.Drawing.Size(32, 37);
             this.circle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -104,7 +104,7 @@
             // 
             this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.Location = new System.Drawing.Point(127, 88);
-            this.startBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startBtn.Margin = new System.Windows.Forms.Padding(2);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(345, 51);
             this.startBtn.TabIndex = 7;
@@ -123,7 +123,7 @@
             this.Controls.Add(this.speedSelect);
             this.Controls.Add(this.pictureBox1);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(75004, 812507);
             this.Name = "mainForm";
             this.ShowIcon = false;

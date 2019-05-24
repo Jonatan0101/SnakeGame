@@ -64,7 +64,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(15, 300);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(253, 58);
             this.button1.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Location = new System.Drawing.Point(15, 236);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(253, 58);
             this.btnReset.TabIndex = 3;
@@ -110,6 +110,8 @@
             // autoToggle
             // 
             this.autoToggle.AutoSize = true;
+            this.autoToggle.Checked = true;
+            this.autoToggle.CheckState = System.Windows.Forms.CheckState.Checked;
             this.autoToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoToggle.Location = new System.Drawing.Point(19, 178);
             this.autoToggle.Name = "autoToggle";
@@ -123,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(277, 368);
+            this.ClientSize = new System.Drawing.Size(332, 368);
             this.Controls.Add(this.autoToggle);
             this.Controls.Add(this.infoPpS);
             this.Controls.Add(this.infoDirCh);
@@ -132,7 +134,7 @@
             this.Controls.Add(this.infoTimeLeft);
             this.Controls.Add(this.infoPoints);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Information";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
