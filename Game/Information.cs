@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Media;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,6 +35,22 @@ namespace Game
         private void BtnReset_Click(object sender, EventArgs e)
         {
             mainFrm.ResetGame();
+        }
+
+        private void AutoToggle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (autoToggle.Checked)
+            {
+                SoundPlayer sound = new SoundPlayer("AutopilotStart.wav");
+                sound.Play();
+
+            } else
+            {
+                SoundPlayer sound = new SoundPlayer("AutopilotEnd.wav");
+                sound.Play();
+            }
+
+            
         }
     }
 }

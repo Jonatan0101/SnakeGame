@@ -28,5 +28,10 @@ namespace Game
         {
             txtDisplay.Text = "";
         }
+
+        private void DisplayData_Load(object sender, EventArgs e)
+        {
+            Location = new Point(1400, 150);
+        }
     }
 }

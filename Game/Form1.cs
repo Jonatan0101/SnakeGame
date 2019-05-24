@@ -77,7 +77,9 @@ namespace Game
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Control();
+            if (info.autoToggle.Checked)
+                Control();
+            
 
             pauseMsg.Visible = false;
 
@@ -160,6 +162,30 @@ namespace Game
             }
         }
 
+        void AltControl()
+        {
+            int diffNormX = currentX - circlePosX;
+            int diffEdgX = Width - currentX + circlePosX;
+
+            int diffNormY = currentY - circlePosX;
+            int diffEdgY = Height - currentY + circlePosX;
+
+            int distXdec;
+            int distYdec;
+
+            if (Math.Abs(diffNormX) < Math.Abs(diffEdgX))
+                distXdec = diffNormX;
+            else
+                distXdec = diffEdgX;
+
+            if (Math.Abs(diffNormY) < Math.Abs(diffEdgY))
+                distYdec = diffNormY;
+            else
+                distYdec = diffEdgY;
+
+            
+        }
+
         // Kalkylerar avståndet i pixlar mellan bild och cirkel
         double DistCalc()
         {
@@ -195,7 +221,7 @@ namespace Game
             Random r = new Random();
             circle.Location = new Point(r.Next(1, Size.Width -20), r.Next(1, Size.Height-100));
 
-            //data.txtDisplay.AppendText($"\n{DistCalc()} ----- ({currentX}, {currentY}) ({circlePosX},{circlePosY})");
+            data.txtDisplay.AppendText($"\n/////////NEW POSITION////////");
         }
 
         private void SpeedSelect_Scroll(object sender, EventArgs e)

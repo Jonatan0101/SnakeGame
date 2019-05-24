@@ -68,6 +68,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "DisplayData";
+            this.Load += new System.EventHandler(this.DisplayData_Load);
             this.ResumeLayout(false);
 
         }

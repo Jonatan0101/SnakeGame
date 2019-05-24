@@ -34,6 +34,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.infoDirCh = new System.Windows.Forms.Label();
             this.infoPpS = new System.Windows.Forms.Label();
+            this.autoToggle = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // infoPoints
@@ -106,11 +107,24 @@
             this.infoPpS.TabIndex = 5;
             this.infoPpS.Text = "Points / Second: 0";
             // 
+            // autoToggle
+            // 
+            this.autoToggle.AutoSize = true;
+            this.autoToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoToggle.Location = new System.Drawing.Point(19, 178);
+            this.autoToggle.Name = "autoToggle";
+            this.autoToggle.Size = new System.Drawing.Size(224, 33);
+            this.autoToggle.TabIndex = 6;
+            this.autoToggle.Text = "Enable Autopilot";
+            this.autoToggle.UseVisualStyleBackColor = true;
+            this.autoToggle.CheckedChanged += new System.EventHandler(this.AutoToggle_CheckedChanged);
+            // 
             // Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(277, 368);
+            this.Controls.Add(this.autoToggle);
             this.Controls.Add(this.infoPpS);
             this.Controls.Add(this.infoDirCh);
             this.Controls.Add(this.btnReset);
@@ -137,5 +151,6 @@
         public System.Windows.Forms.Label infoTimeLeft;
         public System.Windows.Forms.Label infoDirCh;
         public System.Windows.Forms.Label infoPpS;
+        public System.Windows.Forms.CheckBox autoToggle;
     }
 }

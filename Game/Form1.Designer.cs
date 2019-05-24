@@ -46,7 +46,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(42, 156);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 218);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 28);
@@ -55,7 +55,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 10;
+            this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // speedSelect
@@ -87,7 +87,7 @@
             // 
             this.circle.Image = ((System.Drawing.Image)(resources.GetObject("circle.Image")));
             this.circle.InitialImage = ((System.Drawing.Image)(resources.GetObject("circle.InitialImage")));
-            this.circle.Location = new System.Drawing.Point(42, 246);
+            this.circle.Location = new System.Drawing.Point(20, 298);
             this.circle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.circle.Name = "circle";
             this.circle.Size = new System.Drawing.Size(32, 37);
