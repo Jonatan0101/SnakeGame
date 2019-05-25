@@ -41,7 +41,6 @@
             this.txtDisplay.Size = new System.Drawing.Size(368, 364);
             this.txtDisplay.TabIndex = 0;
             this.txtDisplay.Text = "";
-            this.txtDisplay.TextChanged += new System.EventHandler(this.TxtDisplay_TextChanged);
             // 
             // button1
             // 
