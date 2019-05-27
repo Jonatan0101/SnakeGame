@@ -138,13 +138,13 @@ namespace Game
 
             // Flyttar spelaren om man åker utanför
             if (playerBox.Location.X > Size.Width)
-                ChangePictureLocation(playerBox, 0, currentY);
+                ChangePictureLocation(playerBox, 0, currentPlayerPosY);
             if (playerBox.Location.Y > Size.Height)
-                ChangePictureLocation(playerBox, currentX, 0);
+                ChangePictureLocation(playerBox, currentPlayerPosX, 0);
             if (playerBox.Location.X < 0)
-                ChangePictureLocation(playerBox, Size.Width, currentY);
+                ChangePictureLocation(playerBox, Size.Width, currentPlayerPosY);
             if (playerBox.Location.Y < 0)
-                ChangePictureLocation(playerBox, currentX, Size.Height);
+                ChangePictureLocation(playerBox, currentPlayerPosX, Size.Height);
 
 
 
@@ -203,6 +203,7 @@ namespace Game
             }
         }
 
+        // Ej klar
         void AltControl()
         {
             int diffNormX = Math.Abs(currentX - circlePosX);
@@ -211,18 +212,9 @@ namespace Game
             int diffNormY = Math.Abs(currentY - circlePosX);
             int diffEdgY = Math.Abs(Height - currentY + circlePosX);
 
-            int distXdec;
-            int distYdec;
 
-            if (Math.Abs(diffNormX) < Math.Abs(diffEdgX))
-                distXdec = diffNormX;
-            else
-                distXdec = diffEdgX;
 
-            if (Math.Abs(diffNormY) < Math.Abs(diffEdgY))
-                distYdec = diffNormY;
-            else
-                distYdec = diffEdgY;
+            
 
             
         }
