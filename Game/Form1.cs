@@ -13,16 +13,23 @@ namespace Game
     public partial class mainForm : Form
     {
         string direction = "down";
-        int speed = 10;
+        string playerDirection = "right";
+        int speed = 7;
         int dirCh = 0;
         bool pause = false;
         bool hasStarted = false;
         int points = 0;
+        int playerPoints = 0;
         int clockUp = 0;
         int timeLeft = 60;
 
+        Random r = new Random();
+
         int currentX;
         int currentY;
+
+        int currentPlayerPosX;
+        int currentPlayerPosY;
 
         int circlePosX;
         int circlePosY;
@@ -37,6 +44,9 @@ namespace Game
             data = new DisplayData(this);
             info.Show();
             data.Show();
+
+            playerBox.Location = new Point(r.Next(10, Size.Width), r.Next(10, Size.Height));
+            pictureBox1.Location = new Point(r.Next(10, Size.Width), r.Next(10, Size.Height));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,16 +62,16 @@ namespace Game
             switch (e.KeyCode)
             {
                 case Keys.Down:
-                    direction = "down";
+                    playerDirection = "down";
                     break;
                 case Keys.Up:
-                    direction = "up";
+                    playerDirection = "up";
                     break;
                 case Keys.Right:
-                    direction = "right";
+                    playerDirection = "right";
                     break;
                 case Keys.Left:
-                    direction = "left";
+                    playerDirection = "left";
                     break;
 
                 case Keys.Escape:
@@ -99,6 +109,22 @@ namespace Game
                     pictureBox1.Location = new Point(currentX - speed, currentY);
                     break;
             }
+            switch (playerDirection)
+            {
+                case "up":
+                    playerBox.Location = new Point(currentPlayerPosX, currentPlayerPosY - speed);
+                    break;
+                case "down":
+                    playerBox.Location = new Point(currentPlayerPosX, currentPlayerPosY + speed);
+
+                    break;
+                case "right":
+                    playerBox.Location = new Point(currentPlayerPosX + speed, currentPlayerPosY);
+                    break;
+                case "left":
+                    playerBox.Location = new Point(currentPlayerPosX - speed, currentPlayerPosY);
+                    break;
+            }
 
             // Flyttar bild om den åker utanför formen
             if (pictureBox1.Location.X > Size.Width)
@@ -109,8 +135,31 @@ namespace Game
                 ChangePictureLocation(pictureBox1, Size.Width, currentY);
             if (pictureBox1.Location.Y < 0)
                 ChangePictureLocation(pictureBox1, currentX, Size.Height);
+
+            // Flyttar spelaren om man åker utanför
+            if (playerBox.Location.X > Size.Width)
+                ChangePictureLocation(playerBox, 0, currentY);
+            if (playerBox.Location.Y > Size.Height)
+                ChangePictureLocation(playerBox, currentX, 0);
+            if (playerBox.Location.X < 0)
+                ChangePictureLocation(playerBox, Size.Width, currentY);
+            if (playerBox.Location.Y < 0)
+                ChangePictureLocation(playerBox, currentX, Size.Height);
+
+
+
+            // Om cirkeln tas byter den plats
             if (pictureBox1.Bounds.IntersectsWith(circle.Bounds))
+            {
                 ChangeCirclePosition();
+                points++;
+            }
+            if (playerBox.Bounds.IntersectsWith(circle.Bounds))
+            {
+                ChangeCirclePosition();
+                playerPoints++;
+            }
+                
         }
 
         void Control()
@@ -156,11 +205,11 @@ namespace Game
 
         void AltControl()
         {
-            int diffNormX = currentX - circlePosX;
-            int diffEdgX = Width - currentX + circlePosX;
+            int diffNormX = Math.Abs(currentX - circlePosX);
+            int diffEdgX = Math.Abs(Width - currentX + circlePosX);
 
-            int diffNormY = currentY - circlePosX;
-            int diffEdgY = Height - currentY + circlePosX;
+            int diffNormY = Math.Abs(currentY - circlePosX);
+            int diffEdgY = Math.Abs(Height - currentY + circlePosX);
 
             int distXdec;
             int distYdec;
@@ -178,15 +227,6 @@ namespace Game
             
         }
 
-        // Kalkylerar avståndet i pixlar mellan bild och cirkel
-        double DistCalc()
-        {
-            GetPositions();
-            // Returnerar avståndet som räknas ut med hjälp av avståndsformeln
-            return Math.Sqrt(Math.Pow(circlePosX - currentX, 2) + Math.Pow(circlePosY - currentY, 2));
-                    
-        }
-
         void GetPositions()
         {
             currentX = pictureBox1.Location.X;
@@ -194,6 +234,9 @@ namespace Game
 
             circlePosX = circle.Location.X;
             circlePosY = circle.Location.Y;
+
+            currentPlayerPosX = playerBox.Location.X;
+            currentPlayerPosY = playerBox.Location.Y;
         }
 
         void ChangePictureLocation(PictureBox p, int x, int y)
@@ -201,12 +244,13 @@ namespace Game
             p.Location = new Point(x, y);
         }
 
+        
+
         void ChangeCirclePosition()
         {
-            points++;
-            info.infoPoints.Text = $"Points: {points}";
+            info.infoPoints.Text = $"Computer Points: {points}";
+            info.lblPlayerPoints.Text = $"Player Points: {playerPoints}";
             
-            Random r = new Random();
             circle.Location = new Point(r.Next(1, Size.Width -20), r.Next(1, Size.Height-100));
 
             data.txtDisplay.AppendText($"\n/////////NEW POSITION////////");
@@ -214,7 +258,7 @@ namespace Game
 
         private void SpeedSelect_Scroll(object sender, EventArgs e)
         {
-            //speed = speedSelect.Value;
+            
         }
 
         private void PauseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -226,10 +270,12 @@ namespace Game
         {
             if (!hasStarted)
                 return;
+
             pause = !pause;
             pauseMsg.Visible = pause;
 
             timer1.Enabled = !pause;
+            clock.Enabled = !pause;
         }
         public void ResetGame()
         {
@@ -256,7 +302,15 @@ namespace Game
                 return;
 
             clockUp++;
-            //timeLeft--;
+            timeLeft--;
+            if (timeLeft == 0)
+            {
+                PauseGame();
+                Results result = new Results(playerPoints, points);
+                result.Show();
+            }
+
+
             info.infoTimeLeft.Text = $"Time Left: {timeLeft}";
             info.infoPpS.Text = $"Points / Second: {Math.Round((double)points / (double)(clockUp), 2)}";
         }

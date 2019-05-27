@@ -37,9 +37,11 @@
             this.circle = new System.Windows.Forms.PictureBox();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.startBtn = new System.Windows.Forms.Button();
+            this.playerBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speedSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBox)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -112,11 +114,23 @@
             this.startBtn.UseVisualStyleBackColor = true;
             this.startBtn.Click += new System.EventHandler(this.StartBtn_Click);
             // 
+            // playerBox
+            // 
+            this.playerBox.Image = ((System.Drawing.Image)(resources.GetObject("playerBox.Image")));
+            this.playerBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("playerBox.InitialImage")));
+            this.playerBox.Location = new System.Drawing.Point(280, 170);
+            this.playerBox.Margin = new System.Windows.Forms.Padding(2);
+            this.playerBox.Name = "playerBox";
+            this.playerBox.Size = new System.Drawing.Size(26, 28);
+            this.playerBox.TabIndex = 8;
+            this.playerBox.TabStop = false;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 368);
+            this.Controls.Add(this.playerBox);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.circle);
             this.Controls.Add(this.pauseMsg);
@@ -134,6 +148,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speedSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,6 +163,7 @@
         private System.Windows.Forms.PictureBox circle;
         private System.Windows.Forms.Timer clock;
         private System.Windows.Forms.Button startBtn;
+        private System.Windows.Forms.PictureBox playerBox;
     }
 }
 

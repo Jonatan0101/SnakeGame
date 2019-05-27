@@ -35,6 +35,7 @@
             this.infoDirCh = new System.Windows.Forms.Label();
             this.infoPpS = new System.Windows.Forms.Label();
             this.autoToggle = new System.Windows.Forms.CheckBox();
+            this.lblPlayerPoints = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // infoPoints
@@ -44,21 +45,20 @@
             this.infoPoints.Location = new System.Drawing.Point(9, 7);
             this.infoPoints.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.infoPoints.Name = "infoPoints";
-            this.infoPoints.Size = new System.Drawing.Size(120, 31);
+            this.infoPoints.Size = new System.Drawing.Size(246, 31);
             this.infoPoints.TabIndex = 0;
-            this.infoPoints.Text = "Points: 0";
+            this.infoPoints.Text = "Computer Points: 0";
             // 
             // infoTimeLeft
             // 
             this.infoTimeLeft.AutoSize = true;
             this.infoTimeLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoTimeLeft.Location = new System.Drawing.Point(9, 44);
+            this.infoTimeLeft.Location = new System.Drawing.Point(9, 144);
             this.infoTimeLeft.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.infoTimeLeft.Name = "infoTimeLeft";
             this.infoTimeLeft.Size = new System.Drawing.Size(172, 31);
             this.infoTimeLeft.TabIndex = 1;
             this.infoTimeLeft.Text = "Time Left: 60";
-            this.infoTimeLeft.Visible = false;
             // 
             // button1
             // 
@@ -121,11 +121,23 @@
             this.autoToggle.UseVisualStyleBackColor = true;
             this.autoToggle.CheckedChanged += new System.EventHandler(this.AutoToggle_CheckedChanged);
             // 
+            // lblPlayerPoints
+            // 
+            this.lblPlayerPoints.AutoSize = true;
+            this.lblPlayerPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerPoints.Location = new System.Drawing.Point(13, 38);
+            this.lblPlayerPoints.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPlayerPoints.Name = "lblPlayerPoints";
+            this.lblPlayerPoints.Size = new System.Drawing.Size(204, 31);
+            this.lblPlayerPoints.TabIndex = 7;
+            this.lblPlayerPoints.Text = "Player Points: 0";
+            // 
             // Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 368);
+            this.ClientSize = new System.Drawing.Size(466, 376);
+            this.Controls.Add(this.lblPlayerPoints);
             this.Controls.Add(this.autoToggle);
             this.Controls.Add(this.infoPpS);
             this.Controls.Add(this.infoDirCh);
@@ -154,5 +166,6 @@
         public System.Windows.Forms.Label infoDirCh;
         public System.Windows.Forms.Label infoPpS;
         public System.Windows.Forms.CheckBox autoToggle;
+        public System.Windows.Forms.Label lblPlayerPoints;
     }
 }
