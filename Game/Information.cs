@@ -52,5 +52,10 @@ namespace Game
 
             
         }
+
+        private void TrackBar1_Scroll(object sender, EventArgs e)
+        {
+            mainFrm.ChangeSpeed(trackBar1.Value);
+        }
     }
 }

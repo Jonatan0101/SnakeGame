@@ -14,7 +14,8 @@ namespace Game
     {
         string direction = "down";
         string playerDirection = "right";
-        int speed = 7;
+        int speed = 5;
+        int playerSpeed = 7;
         int dirCh = 0;
         bool pause = false;
         bool hasStarted = false;
@@ -52,6 +53,11 @@ namespace Game
         private void Form1_Load(object sender, EventArgs e)
         {
             
+        }
+
+        public void ChangeSpeed(int value)
+        {
+            speed = value;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -112,17 +118,17 @@ namespace Game
             switch (playerDirection)
             {
                 case "up":
-                    playerBox.Location = new Point(currentPlayerPosX, currentPlayerPosY - speed);
+                    playerBox.Location = new Point(currentPlayerPosX, currentPlayerPosY - playerSpeed);
                     break;
                 case "down":
-                    playerBox.Location = new Point(currentPlayerPosX, currentPlayerPosY + speed);
+                    playerBox.Location = new Point(currentPlayerPosX, currentPlayerPosY + playerSpeed);
 
                     break;
                 case "right":
-                    playerBox.Location = new Point(currentPlayerPosX + speed, currentPlayerPosY);
+                    playerBox.Location = new Point(currentPlayerPosX + playerSpeed, currentPlayerPosY);
                     break;
                 case "left":
-                    playerBox.Location = new Point(currentPlayerPosX - speed, currentPlayerPosY);
+                    playerBox.Location = new Point(currentPlayerPosX - playerSpeed, currentPlayerPosY);
                     break;
             }
 
