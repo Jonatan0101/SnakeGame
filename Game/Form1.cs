@@ -44,7 +44,7 @@ namespace Game
             info = new Information(this);
             data = new DisplayData(this);
             info.Show();
-            data.Show();
+            //data.Show();
 
             playerBox.Location = new Point(r.Next(10, Size.Width), r.Next(10, Size.Height));
             pictureBox1.Location = new Point(r.Next(10, Size.Width), r.Next(10, Size.Height));
@@ -85,7 +85,6 @@ namespace Game
                     break;
             }
             dirCh++;
-            info.infoDirCh.Text = $"Direction Changes: {dirCh}";
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -308,9 +307,10 @@ namespace Game
                 result.Show();
             }
 
-
             info.infoTimeLeft.Text = $"Time Left: {timeLeft}";
-            info.infoPpS.Text = $"Points / Second: {Math.Round((double)points / (double)(clockUp), 2)}";
+            //info.infoPpS.Text = $"Points / Second: {Math.Round(points / (double)(clockUp), 2)}";
         }
+
+        
     }
 }

@@ -39,16 +39,16 @@ namespace Game
 
         private void AutoToggle_CheckedChanged(object sender, EventArgs e)
         {
-            if (autoToggle.Checked)
-            {
-                SoundPlayer sound = new SoundPlayer("AutopilotStart.wav");
-                sound.Play();
+            //if (autoToggle.Checked)
+            //{
+            //    SoundPlayer sound = new SoundPlayer("AutopilotStart.wav");
+            //    sound.Play();
 
-            } else
-            {
-                SoundPlayer sound = new SoundPlayer("AutopilotEnd.wav");
-                sound.Play();
-            }
+            //} else
+            //{
+            //    SoundPlayer sound = new SoundPlayer("AutopilotEnd.wav");
+            //    sound.Play();
+            //}
 
             
         }
@@ -56,6 +56,18 @@ namespace Game
         private void TrackBar1_Scroll(object sender, EventArgs e)
         {
             mainFrm.ChangeSpeed(trackBar1.Value);
+            lblCurrentLvl.Text = $"Current Level: {trackBar1.Value}";
+        }
+
+        public void UpdateLevel(int level)
+        {
+            trackBar1.Value = level;
+        }
+
+        private void TrackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            mainFrm.ChangeSpeed(trackBar1.Value);
+            lblCurrentLvl.Text = $"Current Level: {trackBar1.Value}";
         }
     }
 }
